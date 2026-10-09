@@ -279,3 +279,10 @@ No autonomous maintainer-loop run has been recorded yet.
 - Required permission: `evidence-harness`
 - Validation result: pass
 - Next recommended milestone: human direction required before selecting the next bounded milestone.
+
+
+## Distribution reconciliation — 2026-10-09
+
+Candidate `0.2.20` reconciles npm with the current GitHub implementation under the owner-authorised package update objective. Local validation, tarball inspection, clean installation, and authenticated publication are required. Registry publication is pending; existing product authority and execution boundaries remain unchanged.
+
+Validation evidence: Passed pack validation, complete npm test, maintainer-loop validation, evidence-bundle replay and archive report. A fresh-cache tarball install passed installed validate-pack. Synthetic .env.example fixtures are intentional; no credential-pattern matches were found. Registry publication and post-publication installation remain pending.
