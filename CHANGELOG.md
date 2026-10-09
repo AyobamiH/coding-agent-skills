@@ -4,6 +4,10 @@ All notable changes follow [Semantic Versioning](docs/versioning/README.md).
 
 ## [Unreleased]
 
+## [0.2.20] - 2026-10-09
+
+- Keep disposable Git fixture commits independent of workstation signing preferences.
+
 ### Fixed
 
 - Static repository scanners now skip default ignored directories such as
