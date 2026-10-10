@@ -1,0 +1,79 @@
+{
+  "package": "coding-agent-skills",
+  "version": "0.2.20",
+  "sourceRepository": "https://github.com/OneClickPostFactory/coding-agent-skills",
+  "sourceCommit": "1d17b28db96c9466d2ae41519e7992a71cc06868",
+  "sha256": "1a05f4cfb734796383076a0868210986a1f71fbec3d8dbe5588c9d854455047e",
+  "integrity": "sha512-CQ3yXthDk/YPS08IRLhJLFcPwgkiJOpOXbNzcO6gqqkk2+qIeMPLbjn52+Kwqp6Auz18J3+VzJLOR6qjB3Eg2g==",
+  "fileCount": 538,
+  "sourceFilesMatch": true,
+  "status": "published and independently accepted",
+  "localTests": "97 release tests passed plus Node test runner; exit 0",
+  "mergeCI": {
+    "run": 38007471941,
+    "conclusion": "success"
+  },
+  "candidateInstallation": [
+    {
+      "command": "npm install",
+      "exit": 0
+    },
+    {
+      "command": "coding-agent-skills --help",
+      "exit": 0
+    },
+    {
+      "command": "coding-agent-skills validate-pack",
+      "exit": 0
+    }
+  ],
+  "githubReleaseBoundary": "Authenticated GitHub identity AyobamiH has pull permission only on canonical repository; release creation unavailable.",
+  "stageId": "28d06f34-bc08-43dd-a175-e767ab14ffe4",
+  "stagedSha256": "1a05f4cfb734796383076a0868210986a1f71fbec3d8dbe5588c9d854455047e",
+  "publishedAt": "2026-10-10T00:12:35.085Z",
+  "registryDist": {
+    "shasum": "41669541ae7fc364db7bad0438a876d8f7080439",
+    "tarball": "https://registry.npmjs.org/coding-agent-skills/-/coding-agent-skills-0.2.20.tgz",
+    "integrity": "sha512-CQ3yXthDk/YPS08IRLhJLFcPwgkiJOpOXbNzcO6gqqkk2+qIeMPLbjn52+Kwqp6Auz18J3+VzJLOR6qjB3Eg2g==",
+    "fileCount": 538,
+    "unpackedSize": 1224079,
+    "signatures": [
+      {
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+        "sig": "MEUCIQC43E2tFSbpo1SZxhCcNLCoWWZIA3N+M/NHCZ5Xcfx2/gIga9gDeWhJVkf/kJOOx1BDC/thQL5sAJpH0fGzemnzmF0="
+      }
+    ]
+  },
+  "publisher": "oneclicksystems",
+  "distTags": {
+    "latest": "0.2.20"
+  },
+  "registrySha256": "1a05f4cfb734796383076a0868210986a1f71fbec3d8dbe5588c9d854455047e",
+  "registryInstallation": [
+    {
+      "check": "exact registry install",
+      "exit": 0
+    },
+    {
+      "check": "CLI help",
+      "exit": 0
+    },
+    {
+      "check": "pack validation",
+      "exit": 0
+    },
+    {
+      "check": "registry signatures",
+      "exit": 0
+    }
+  ],
+  "packageExports": {
+    "bin": {
+      "coding-agent-skills": "bin/coding-agent-skills"
+    },
+    "exports": null,
+    "main": null
+  },
+  "acceptedAt": "2026-10-10T00:13:18.166886+00:00",
+  "authenticationBoundary": "Maintainer 2FA approval completed. Temporary npm login logged out and removed; no persistent npm write credential introduced. Canonical GitHub account permission remains pull-only; release creation and evidence merge require its maintainer."
+}
