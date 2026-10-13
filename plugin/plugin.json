@@ -19,6 +19,8 @@
         "capabilities": ["Read"],
         "websiteURL": "https://github.com/OneClickPostFactory/coding-agent-skills",
         "supportURL": "https://github.com/OneClickPostFactory/coding-agent-skills/issues",
+        "privacyPolicyURL": "https://github.com/AyobamiH/coding-agent-skills/blob/release/plugins-directory-2026-10-13/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/AyobamiH/coding-agent-skills/blob/release/plugins-directory-2026-10-13/TERMS.md",
         "defaultPrompt": [
           "Map this repository and explain what evidence is missing before I change it.",
           "Trace the statically visible routes and API contracts in this checkout.",

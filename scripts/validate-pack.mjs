@@ -690,6 +690,8 @@ if (packageJson) {
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "PRIVACY.md",
+    "TERMS.md",
     "README.md",
     "ROADMAP.md",
     "RUNBOOK.md",

@@ -23,7 +23,7 @@ extracted-plugin tests. All eight packaged skill folders passed Skill Creator's
 frontmatter validation. Independent Python ZIP verification passed. All 21
 bundled CLI/library implementation files match the published npm 0.2.20 bytes.
 The accepted archive SHA-256 is
-`55238d262c8dba2636cfc8574576a1ac21bf7874ac94f276a923b24706a0eda4`.
+`d5c8e9540f6595d6cd7eca42f8634895a760c2aa1907924499d16a7f38b5f4f2`.
 
 Requires Node.js 20+ and Git. No npm dependency installation is needed.
 
@@ -39,7 +39,7 @@ The builder uses an allowlist of source directories, rejects symlinks and unsafe
 archive names, sorts entries and fixes timestamps. `checksums.json` covers every
 other file in the ZIP. The build prints the final archive SHA-256. Repeated builds
 on the same Node/zlib implementation must match; do not assume cross-zlib compressed
-bytes match. The package contains 131 files and eight skills, with no hooks, MCP
+bytes match. The package contains 133 files and eight skills, with no hooks, MCP
 connection, runtime downloads or credentials. Core bin/library code is unchanged.
 
 Acceptance covers fresh extraction, all eight schema-valid audit results,
@@ -113,3 +113,23 @@ automated checks must be verified after upload. The local tests do not substitut
 for that host acceptance or OpenAI review. Inspect existing submissions before
 creating a duplicate, preserve any active review, and record the plugin/package ID
 and displayed status after submission. Publish only the approved package.
+
+## Portal and CI receipt
+
+The nine OS/Node matrix jobs and the full release workflow passed at source commit
+`f6e873449402a0432eec6e02bdb9c47397947542`:
+[plugin acceptance](https://github.com/AyobamiH/coding-agent-skills/actions/runs/38397673350),
+[full validation](https://github.com/AyobamiH/coding-agent-skills/actions/runs/38397673232).
+
+The platform accepted the initial ZIP on 2026-10-13 as plugin
+`plugins_6ace441e8acc819180f97de4e6600421`, version 0.2.20. It reported a blocking
+eligibility finding: “We are not accepting more skills-only submissions at this
+time.” This prevents review submission and publication independently of code
+quality. The same scan required privacy and terms URLs; dedicated public policies
+and their package metadata have now been added. The corrected archive checksum
+above supersedes the initial upload's checksum.
+
+The intended upstream PR creation returned GitHub 403 Resource not accessible by
+integration. Source is safely persisted in the contribution fork, with
+[review PR 3](https://github.com/AyobamiH/coding-agent-skills/pull/3).
+The upstream main and its GitHub Releases have not been changed.

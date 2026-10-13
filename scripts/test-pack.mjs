@@ -694,6 +694,8 @@ test("npm package metadata is public-ready and dependency-free", () => {
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "PRIVACY.md",
+    "TERMS.md",
     "README.md",
     "ROADMAP.md",
     "RUNBOOK.md",

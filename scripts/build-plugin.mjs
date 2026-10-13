@@ -57,6 +57,8 @@ export function buildPlugin(outputDirectory = path.join(root, "dist")) {
   collect("plugin/icon.svg", "assets/icon.svg", files);
   collect("plugin/run-audit.mjs", "scripts/run-audit.mjs", files);
   collect("LICENSE", "LICENSE", files);
+  collect("PRIVACY.md", "PRIVACY.md", files);
+  collect("TERMS.md", "TERMS.md", files);
   collect("contracts/evidence-pack", "contracts/evidence-pack", files);
   for (const item of ["bin/coding-agent-skills", "scripts/lib", "schemas", "examples/manifests", "examples/command-policies", "package.json", "LICENSE"]) {
     collect(item, `assets/core/${item}`, files);
