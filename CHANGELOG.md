@@ -4,6 +4,13 @@ All notable changes follow [Semantic Versioning](docs/versioning/README.md).
 
 ## [Unreleased]
 
+- Add a reproducible OpenAI Plugins Directory package for the eight read-only
+  audits, with the 0.2.20 runner, skill references, icons and per-file checksums.
+- Add extracted-package acceptance coverage and a Linux/macOS/Windows matrix on
+  Node.js 20, 22 and 24; preserve missing-input and no-mutation boundaries.
+- Reconcile npm publication evidence and the work ledger; distinguish package
+  construction, GitHub Release, directory submission, approval and publication.
+
 ## [0.2.20] - 2026-10-09
 
 - Keep disposable Git fixture commits independent of workstation signing preferences.

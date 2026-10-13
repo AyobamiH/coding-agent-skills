@@ -680,6 +680,7 @@ if (packageJson) {
     "bin/",
     "scripts/",
     "skills/",
+    "plugin/",
     "schemas/",
     "contracts/",
     "docs/",

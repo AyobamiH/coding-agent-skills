@@ -2,7 +2,7 @@
 
 Shared, versioned workflows for evidence-driven coding agents.
 
-The pilot pack contains:
+The versioned skill pack contains:
 
 - Shared evidence-pack contract.
 - `repo-map`: audit-only repository orientation.
@@ -32,6 +32,19 @@ Project-specific adapters will live in their owning repositories and may narrow,
 - Report skipped, failed, and unverifiable checks honestly.
 
 See [architecture](docs/architecture/README.md), [safety](docs/safety/README.md), and [authoring](docs/authoring/README.md).
+
+## OpenAI Plugins Directory package
+
+The directory distribution packages the eight deterministic read-only audits.
+Build it with `npm run plugin:build` and validate the extracted distribution with
+`npm run plugin:test`. It requires a local checkout and Node.js 20+, with Git for
+Git evidence. The installed plugin needs no npm install, external service or API key.
+It excludes the four broader instruction workflows from the npm pack.
+
+See [release and reviewer evidence](docs/release/plugin-v0.2.20.md) for reproducible
+checks, supported scope, known limits and actual publication state. The canonical
+source is `OneClickPostFactory/coding-agent-skills`; `AyobamiH/coding-agent-skills`
+is the contribution fork, not a second release authority.
 
 ## Completion Standard
 

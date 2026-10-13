@@ -35,6 +35,7 @@
     "bin/",
     "scripts/",
     "skills/",
+    "plugin/",
     "schemas/",
     "contracts/",
     "docs/",
@@ -56,7 +57,9 @@
   "scripts": {
     "validate": "node scripts/validate-pack.mjs .",
     "test": "node scripts/test-pack.mjs && node --test",
-    "pack:dry-run": "npm pack --dry-run"
+    "pack:dry-run": "npm pack --dry-run",
+    "plugin:build": "node scripts/build-plugin.mjs",
+    "plugin:test": "node --test tests/plugin-package.test.mjs"
   },
   "publishConfig": {
     "access": "public",
