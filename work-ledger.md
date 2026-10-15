@@ -10,7 +10,7 @@
 - First external project-owned adapter adoption completed for `/home/oneclickwebsitedesignfactory/tax-lien-platform` at candidate commit `c548b1a6cbb3455a70b89d0e301e22435bfccac9`.
 - The adopted adapter is `repo-map` only, docs/metadata-only, and contains no commands, runtime checks, build/test/package behavior, platform/deployment behavior, or secret-aware behavior.
 - The shared repository does not contain real adapter manifests; real project adapters remain owned by their project repositories.
-- Public npm package release `v0.2.19` exposes the dependency-free
+- Public npm package release `v0.2.20` exposes the dependency-free
   `coding-agent-skills` CLI under MIT license.
 - `v0.2.18` formalizes the public JSON result schema, corrects missing-input and
   safety-refusal semantics, and adds deterministic aggregate `audit` output.
@@ -30,15 +30,25 @@
 
 ## Last Completed Version
 
-`v0.2.19`
+`v0.2.20` (npm, published 2026-10-10; see `docs/release/npm-v0.2.20-evidence.json`).
+The latest observed GitHub Release is still `v0.2.19`; do not infer a `v0.2.20`
+GitHub Release from npm publication.
 
 ## Current Recommended Milestone
 
-The formal public CLI result schema and aggregate read-only audit command are released.
-The OpenClaw wrapper exposes `coding_audit` as an optional ToolGate-controlled tool.
-The `v0.2.19` compatibility patch normalizes controlled legacy empty and unsafe states
-into the formal schema. Reassess current evidence before selecting another bounded
-read-only capability.
+Publication is externally blocked, not actively building. The corrected 0.2.20
+directory ZIP is uploaded as a draft. At the last authenticated observation,
+OpenAI was not accepting more skills-only submissions; privacy and terms findings
+were resolved. See `docs/release/plugin-v0.2.20-submission.json`. On 2026-10-15 the
+saved draft redirected to sign-in, so no later review status has been asserted.
+Resume that existing draft when eligibility is available; do not create another.
+
+Complete the explicitly user-approved Plugins Directory distribution and record
+the actual submission result. The package contains eight read-only audits backed
+by the released 0.2.20 core. Reviewer proof and reproducible acceptance commands
+are in `docs/release/plugin-v0.2.20.md`. A built ZIP is not a submitted, approved or
+published directory release. Canonical source is the OneClickPostFactory repo;
+the AyobamiH fork hosts contributions when upstream write access is unavailable.
 
 ## Allowed Next Actions
 
@@ -279,3 +289,10 @@ No autonomous maintainer-loop run has been recorded yet.
 - Required permission: `evidence-harness`
 - Validation result: pass
 - Next recommended milestone: human direction required before selecting the next bounded milestone.
+
+
+## Distribution reconciliation — 2026-10-09
+
+Candidate `0.2.20` reconciles npm with the current GitHub implementation under the owner-authorised package update objective. Local validation, tarball inspection, clean installation, and authenticated publication are required. Registry publication is pending; existing product authority and execution boundaries remain unchanged.
+
+Validation evidence: Passed pack validation, complete npm test, maintainer-loop validation, evidence-bundle replay and archive report. A fresh-cache tarball install passed installed validate-pack. Synthetic .env.example fixtures are intentional; no credential-pattern matches were found. Registry publication and post-publication installation remain pending.

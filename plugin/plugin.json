@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "coding-agent-skills",
+  "version": "0.2.20",
+  "description": "Inspect source repositories with eight evidence-backed, read-only coding audits.",
+  "author": { "name": "ayobamih", "url": "https://github.com/AyobamiH" },
+  "homepage": "https://github.com/OneClickPostFactory/coding-agent-skills",
+  "repository": "https://github.com/OneClickPostFactory/coding-agent-skills",
+  "license": "MIT",
+  "keywords": ["code-review", "repository", "evidence", "read-only"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Coding Agent Skills",
+        "shortDescription": "Read-only repository audits",
+        "longDescription": "Map a repository, trace static route and API surfaces, inventory environment variable names, flag redacted secret risks, review migration files, and collect Git handoff and deployment preflight evidence. Eight focused skills use a bundled, dependency-free runner. Requires an accessible local checkout and Node.js 20 or newer; Git is needed for Git evidence. Reports separate observed facts, inferences, skipped checks and limitations. Static evidence does not prove runtime behavior, production health, release approval or the absence of vulnerabilities. The plugin does not install dependencies, execute project code, deploy, apply migrations or publish Git changes.",
+        "developerName": "ayobamih",
+        "category": "Developer Tools",
+        "capabilities": ["Read"],
+        "websiteURL": "https://github.com/OneClickPostFactory/coding-agent-skills",
+        "supportURL": "https://github.com/OneClickPostFactory/coding-agent-skills/issues",
+        "privacyPolicyURL": "https://github.com/AyobamiH/coding-agent-skills/blob/release/plugins-directory-2026-10-13/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/AyobamiH/coding-agent-skills/blob/release/plugins-directory-2026-10-13/TERMS.md",
+        "defaultPrompt": [
+          "Map this repository and explain what evidence is missing before I change it.",
+          "Trace the statically visible routes and API contracts in this checkout.",
+          "Review migration and deployment files without running project commands."
+        ],
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      }
+    }
+  }
+}

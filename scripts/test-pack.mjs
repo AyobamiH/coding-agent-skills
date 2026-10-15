@@ -175,7 +175,7 @@ function createGitFixture(sourceRelativePath) {
   runGitFixtureCommand(temporary, ["config", "user.name", "Fixture User"]);
   runGitFixtureCommand(temporary, ["config", "user.email", "fixture@example.invalid"]);
   runGitFixtureCommand(temporary, ["add", "."]);
-  runGitFixtureCommand(temporary, ["commit", "-m", "initial fixture commit"]);
+  runGitFixtureCommand(temporary, ["-c", "commit.gpgsign=false", "commit", "-m", "initial fixture commit"]);
   return temporary;
 }
 
@@ -236,7 +236,7 @@ function snapshotAbsoluteDirectory(directory) {
   return digest.digest("hex");
 }
 
-function assertOpenClawJsonContract(value, command, packageVersion = "0.2.19") {
+function assertOpenClawJsonContract(value, command, packageVersion = "0.2.20") {
   assert.equal(value.tool, "coding-agent-skills");
   assert.equal(value.command, command);
   assert.equal(value.packageVersion, packageVersion);
@@ -490,7 +490,7 @@ test("local CLI emits OpenClaw-compatible JSON for public commands", () => {
     assert.equal(result.stderr, "");
     const parsed = JSON.parse(result.stdout);
     assertOpenClawJsonContract(parsed, args[0]);
-    assert.deepEqual(validateCliResult(cliResultSchema, parsed, "0.2.19"), []);
+    assert.deepEqual(validateCliResult(cliResultSchema, parsed, "0.2.20"), []);
   }
 
   const emptyAdapters = spawnSync(
@@ -552,7 +552,7 @@ test("public CLI result schema and semantic rules cover success and controlled f
     const result = spawnSync(cliPath, item.args, { cwd: root, encoding: "utf8", stdio: "pipe" });
     assert.equal(result.status, item.exitCode, `${item.args.join(" ")}\n${result.stderr}`);
     const parsed = JSON.parse(result.stdout);
-    assert.deepEqual(validateCliResult(cliResultSchema, parsed, "0.2.19"), []);
+    assert.deepEqual(validateCliResult(cliResultSchema, parsed, "0.2.20"), []);
     assert.equal(parsed.exitCode, item.exitCode);
     assert.equal(parsed.changedState, false);
     assert.equal(parsed.safety.secretsRead, false);
@@ -571,8 +571,8 @@ test("public CLI result schema and semantic rules cover success and controlled f
 test("aggregate audit is deterministic, adapter-optional, and mutation-free", () => {
   const fixture = createGitFixture(path.join("tests", "fixtures", "audit-bundle", "static-project"));
   const before = snapshotAbsoluteDirectory(fixture);
-  const first = buildAuditBundleReport(fixture, { coreRoot: root, packageVersion: "0.2.19" });
-  const second = buildAuditBundleReport(fixture, { coreRoot: root, packageVersion: "0.2.19" });
+  const first = buildAuditBundleReport(fixture, { coreRoot: root, packageVersion: "0.2.20" });
+  const second = buildAuditBundleReport(fixture, { coreRoot: root, packageVersion: "0.2.20" });
   const after = snapshotAbsoluteDirectory(fixture);
 
   assert.equal(before, after);
@@ -586,12 +586,12 @@ test("aggregate audit is deterministic, adapter-optional, and mutation-free", ()
   assert.equal(fs.existsSync(path.join(fixture, "migration-command-ran")), false);
   assert.equal(fs.existsSync(path.join(fixture, "deployment-command-ran")), false);
 
-  const outcome = auditBundleCliResult(fixture, { coreRoot: root, packageVersion: "0.2.19" });
+  const outcome = auditBundleCliResult(fixture, { coreRoot: root, packageVersion: "0.2.20" });
   const json = buildCliResult("audit", [fixture], outcome, {
-    packageVersion: "0.2.19",
+    packageVersion: "0.2.20",
     commandMetadata: PUBLIC_COMMAND_METADATA,
   });
-  assert.deepEqual(validateCliResult(cliResultSchema, json, "0.2.19"), []);
+  assert.deepEqual(validateCliResult(cliResultSchema, json, "0.2.20"), []);
   assert.equal(json.results.length, 8);
   assert.equal(json.metrics.boundedOutput, true);
   assert.ok(json.results.every((result) => result.metrics.boundedOutput === true));
@@ -603,7 +603,7 @@ test("aggregate audit accepts valid adapters, marks partial applicability, and r
   const fixtureRoot = path.join(root, "tests", "fixtures", "project-adapter-installation");
   const valid = auditBundleCliResult(path.join(fixtureRoot, "valid-exact-pin"), {
     coreRoot: root,
-    packageVersion: "0.2.19",
+    packageVersion: "0.2.20",
   });
   assert.equal(valid.exitCode, 0);
   assert.equal(valid.report.adapter.present, true);
@@ -612,7 +612,7 @@ test("aggregate audit accepts valid adapters, marks partial applicability, and r
 
   const unsafe = auditBundleCliResult(path.join(fixtureRoot, "invalid-weakens-restrictions"), {
     coreRoot: root,
-    packageVersion: "0.2.19",
+    packageVersion: "0.2.20",
   });
   assert.equal(unsafe.exitCode, 3);
   assert.equal(unsafe.report.status, "blocked");
@@ -620,7 +620,7 @@ test("aggregate audit accepts valid adapters, marks partial applicability, and r
 
 test("CLI semantic validation rejects unsafe or contradictory evidence", () => {
   const valid = {
-    packageVersion: "0.2.19",
+    packageVersion: "0.2.20",
     changedState: false,
     status: "complete",
     exitCode: 0,
@@ -628,16 +628,16 @@ test("CLI semantic validation rejects unsafe or contradictory evidence", () => {
     recommendedNextAction: { label: "Review", reason: "Evidence only", requiresApproval: false },
     safety: { readOnly: true, secretsRead: false, targetCommandsRun: false, mutationsPerformed: false },
   };
-  assert.deepEqual(cliResultSemanticIssues(valid, "0.2.19"), []);
-  assert.ok(cliResultSemanticIssues({ ...valid, changedState: true }, "0.2.19").length > 0);
-  assert.ok(cliResultSemanticIssues({ ...valid, exitCode: 4 }, "0.2.19").length > 0);
-  assert.ok(cliResultSemanticIssues({ ...valid, packageVersion: "9.9.9" }, "0.2.19").length > 0);
+  assert.deepEqual(cliResultSemanticIssues(valid, "0.2.20"), []);
+  assert.ok(cliResultSemanticIssues({ ...valid, changedState: true }, "0.2.20").length > 0);
+  assert.ok(cliResultSemanticIssues({ ...valid, exitCode: 4 }, "0.2.20").length > 0);
+  assert.ok(cliResultSemanticIssues({ ...valid, packageVersion: "9.9.9" }, "0.2.20").length > 0);
 });
 
 test("npm package metadata is public-ready and dependency-free", () => {
   const packageJson = readJson("package.json");
   assert.equal(packageJson.name, "coding-agent-skills");
-  assert.equal(packageJson.version, "0.2.19");
+  assert.equal(packageJson.version, "0.2.20");
   assert.equal(
     packageJson.description,
     "Evidence-first, read-only coding-agent skills and project adapter tooling.",
@@ -684,6 +684,7 @@ test("npm package metadata is public-ready and dependency-free", () => {
     "bin/",
     "scripts/",
     "skills/",
+    "plugin/",
     "schemas/",
     "contracts/",
     "docs/",
@@ -693,6 +694,8 @@ test("npm package metadata is public-ready and dependency-free", () => {
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "PRIVACY.md",
+    "TERMS.md",
     "README.md",
     "ROADMAP.md",
     "RUNBOOK.md",
@@ -894,6 +897,35 @@ test("secret-audit reports high-confidence findings without printing values", ()
   assert.match(rendered, /src\/leak\.ts/);
   assert.match(rendered, /values omitted/);
   assert.doesNotMatch(rendered, new RegExp(syntheticSecret));
+});
+
+test("secret-audit records and skips an unreadable directory", () => {
+  if (process.platform === "win32" || (typeof process.getuid === "function" && process.getuid() === 0)) {
+    return;
+  }
+  const temporary = fs.mkdtempSync(path.join(os.tmpdir(), "secret-audit-unreadable-"));
+  const readable = path.join(temporary, "src");
+  const unreadable = path.join(temporary, "protected");
+  fs.mkdirSync(readable);
+  fs.mkdirSync(unreadable);
+  fs.writeFileSync(path.join(readable, "config.ts"), 'export const mode = "safe";\n');
+  fs.writeFileSync(path.join(unreadable, "hidden.ts"), 'export const hidden = "not-read";\n');
+  fs.chmodSync(unreadable, 0o000);
+
+  try {
+    const result = buildSecretAuditReport(temporary, { coreRoot: root });
+    assert.equal(result.status, "complete");
+    assert.ok(result.filesScanned.includes("src/config.ts"));
+    assert.ok(!result.filesScanned.includes("protected/hidden.ts"));
+    assert.ok(
+      result.skipped.some(
+        (item) => item.path === "protected" && item.reason === "unreadable directory",
+      ),
+    );
+  } finally {
+    fs.chmodSync(unreadable, 0o700);
+    fs.rmSync(temporary, { recursive: true, force: true });
+  }
 });
 
 test("secret-audit respects adapter-declared scope", () => {

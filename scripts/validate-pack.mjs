@@ -680,6 +680,7 @@ if (packageJson) {
     "bin/",
     "scripts/",
     "skills/",
+    "plugin/",
     "schemas/",
     "contracts/",
     "docs/",
@@ -689,6 +690,8 @@ if (packageJson) {
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "LICENSE",
+    "PRIVACY.md",
+    "TERMS.md",
     "README.md",
     "ROADMAP.md",
     "RUNBOOK.md",
@@ -698,8 +701,8 @@ if (packageJson) {
   if (packageJson.name !== "coding-agent-skills") {
     failures.push("package.json has unexpected package name");
   }
-  if (packageJson.version !== "0.2.19") {
-    failures.push("package.json version must be 0.2.19 for public package validation");
+  if (packageJson.version !== "0.2.20") {
+    failures.push("package.json version must be 0.2.20 for public package validation");
   }
   if (packageJson.type !== "module") failures.push("package.json must preserve ESM mode");
   if (packageJson.private !== false) {

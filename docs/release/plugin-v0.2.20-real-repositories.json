@@ -1,0 +1,295 @@
+{
+  "packageVersion": "0.2.20",
+  "platform": "linux",
+  "node": "v24.19.0",
+  "repositories": [
+    {
+      "checkout": "proof-express",
+      "commit": "cd7d4397c398a3f3ecadeaf9ef6ac1377bd414c4",
+      "cleanBefore": true,
+      "audits": [
+        {
+          "command": "repo-map",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 7,
+          "warnings": 6,
+          "skipped": 0,
+          "notVerified": 0,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "route-trace",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 100,
+          "warnings": 1,
+          "skipped": 2,
+          "notVerified": 5,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "env-audit",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 4,
+          "warnings": 1,
+          "skipped": 53,
+          "notVerified": 5,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "secret-audit",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 0,
+          "warnings": 1,
+          "skipped": 53,
+          "notVerified": 6,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "api-contract-audit",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 81,
+          "warnings": 1,
+          "skipped": 53,
+          "notVerified": 6,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "migration-review",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 0,
+          "warnings": 1,
+          "skipped": 53,
+          "notVerified": 7,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "github-handoff",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 14,
+          "warnings": 1,
+          "skipped": 0,
+          "notVerified": 7,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "deployment-preflight",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 100,
+          "warnings": 1,
+          "skipped": 53,
+          "notVerified": 9,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        }
+      ],
+      "cleanAfter": true
+    },
+    {
+      "checkout": "proof-fastapi",
+      "commit": "2eb8f5b624e60d4074318dec6f33400080eceef9",
+      "cleanBefore": true,
+      "audits": [
+        {
+          "command": "repo-map",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 6,
+          "warnings": 6,
+          "skipped": 0,
+          "notVerified": 0,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "route-trace",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 39,
+          "warnings": 1,
+          "skipped": 4,
+          "notVerified": 5,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "env-audit",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 13,
+          "warnings": 1,
+          "skipped": 92,
+          "notVerified": 5,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "secret-audit",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 0,
+          "warnings": 1,
+          "skipped": 95,
+          "notVerified": 6,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "api-contract-audit",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 43,
+          "warnings": 1,
+          "skipped": 95,
+          "notVerified": 6,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "migration-review",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 3,
+          "warnings": 1,
+          "skipped": 94,
+          "notVerified": 7,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "github-handoff",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 14,
+          "warnings": 1,
+          "skipped": 0,
+          "notVerified": 7,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        },
+        {
+          "command": "deployment-preflight",
+          "exitCode": 0,
+          "status": "complete",
+          "findings": 100,
+          "warnings": 1,
+          "skipped": 92,
+          "notVerified": 9,
+          "schemaValid": true,
+          "changedState": false,
+          "safety": {
+            "readOnly": true,
+            "secretsRead": false,
+            "targetCommandsRun": false,
+            "mutationsPerformed": false
+          }
+        }
+      ],
+      "cleanAfter": true
+    }
+  ]
+}
