@@ -36,6 +36,13 @@ GitHub Release from npm publication.
 
 ## Current Recommended Milestone
 
+Publication is externally blocked, not actively building. The corrected 0.2.20
+directory ZIP is uploaded as a draft. At the last authenticated observation,
+OpenAI was not accepting more skills-only submissions; privacy and terms findings
+were resolved. See `docs/release/plugin-v0.2.20-submission.json`. On 2026-10-15 the
+saved draft redirected to sign-in, so no later review status has been asserted.
+Resume that existing draft when eligibility is available; do not create another.
+
 Complete the explicitly user-approved Plugins Directory distribution and record
 the actual submission result. The package contains eight read-only audits backed
 by the released 0.2.20 core. Reviewer proof and reproducible acceptance commands

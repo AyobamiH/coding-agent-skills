@@ -133,3 +133,14 @@ The intended upstream PR creation returned GitHub 403 Resource not accessible by
 integration. Source is safely persisted in the contribution fork, with
 [review PR 3](https://github.com/AyobamiH/coding-agent-skills/pull/3).
 The upstream main and its GitHub Releases have not been changed.
+
+The corrected ZIP was reuploaded to the same draft. Both missing-URL findings
+cleared. The remaining metadata blocker is the skills-only intake pause; the
+skill scan still displayed 0 of 8 checked. Submit remained disabled pending
+automated checks and resolution of blocking findings. No legal attestations
+were accepted. Corrected source commit
+`5c67fe0e0dce22acd17788f58d599a460da20d19` passed both full validation and plugin
+acceptance workflows. See the [submission receipt](plugin-v0.2.20-submission.json)
+for the draft, checksum and CI identifiers. This release is an uploaded draft,
+not submitted, approved or published. The 2026-10-15 recheck redirected to sign-in,
+so the last authenticated portal observation remains 2026-10-13.

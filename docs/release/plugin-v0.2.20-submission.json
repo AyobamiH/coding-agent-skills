@@ -1,0 +1,29 @@
+{
+  "lastPortalObservation": "2026-10-13",
+  "statusRecordedAt": "2026-10-15",
+  "pluginName": "coding-agent-skills",
+  "version": "0.2.20",
+  "sourceCommit": "5c67fe0e0dce22acd17788f58d599a460da20d19",
+  "artifactSha256": "d5c8e9540f6595d6cd7eca42f8634895a760c2aa1907924499d16a7f38b5f4f2",
+  "pluginId": "plugins_6ace441e8acc819180f97de4e6600421",
+  "draftId": "appsub_6ace441e8af481919b143184d78417ab",
+  "draftUrl": "https://platform.openai.com/plugins/manage/plugins_6ace441e8acc819180f97de4e6600421?tab=details&version=appsub_6ace441e8af481919b143184d78417ab",
+  "state": "uploaded-draft-blocked",
+  "reviewStatus": "Needs attention",
+  "publicationStatus": "Not published",
+  "submittedForReview": false,
+  "blockingFindings": ["We are not accepting more skills-only submissions at this time."],
+  "resolvedFindings": ["Privacy policy URL is required.", "Terms of service URL is required."],
+  "skillScanAtLastObservation": { "state": "Checking skills", "checked": 0, "total": 8 },
+  "legalAttestationsAccepted": false,
+  "ci": {
+    "sourceCommit": "5c67fe0e0dce22acd17788f58d599a460da20d19",
+    "releaseValidation": { "run": 38416664351, "conclusion": "success" },
+    "pluginAcceptance": { "run": 38416664310, "conclusion": "success" },
+    "matrix": "Linux, macOS, Windows; Node.js 20, 22, 24"
+  },
+  "sourceReview": "https://github.com/AyobamiH/coding-agent-skills/pull/3",
+  "upstreamWriteStatus": "Unavailable to the connected integration; upstream PR creation returned 403.",
+  "recheckOn2026_10_15": "The saved draft URL redirected to sign-in; the authenticated session had expired. No fresh portal status is claimed.",
+  "nextStep": "Resume the existing draft once OpenAI accepts skills-only submissions or grants eligibility. Complete host checks and obtain action-time confirmation for legal attestations before submission. Do not create a duplicate or claim publication."
+}
