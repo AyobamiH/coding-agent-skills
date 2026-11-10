@@ -2,6 +2,10 @@
 
 Shared, versioned workflows for evidence-driven coding agents.
 
+Repository contributor security guidance is catalogued in
+[AGENTS.md](AGENTS.md) and [Secure API Delivery](.agents/skills/secure-api-delivery/SKILL.md).
+It is a repository-local development skill, separate from the distributed pilot pack.
+
 The pilot pack contains:
 
 - Shared evidence-pack contract.
@@ -153,3 +157,9 @@ These flags are approval gates, not permission to weaken shared restrictions.
 The runner may update `work-ledger.md` and `runs/skill-runs.md` after a successful bounded
 run. It stops before implementing an unapproved milestone or performing release
 publication. See [the runbook](RUNBOOK.md) and [agent contract](AGENTS.md).
+
+## Agent development entry point
+
+Start with [AGENTS.md](AGENTS.md), the [project knowledge map](.agents/knowledge/README.md),
+and the repository-owned [Secure API Delivery skill](.agents/skills/secure-api-delivery/SKILL.md).
+These files travel with a source checkout; no personal skill installation is required.
